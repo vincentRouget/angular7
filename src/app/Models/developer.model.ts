@@ -1,18 +1,12 @@
-export class developer {
+import { Skill } from './Skill.model';
 
-    lastName?: string;
-    firstName?: string;
-    age?: number;
-    gender?: string;
-    bio?: string;
-    skills?: string[];
-
-    constructor(lastName: string, firstName: string, age: number, gender: string, bio: string) {
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.age = age;
-        this.gender = gender;
-        this.bio = bio;
-        this.skills = [];
-    }
-};
+export class Developer {
+  constructor(
+    public firstName: string,
+    public lastName: string,
+    public age: number,
+    public gender: string,
+    public bio: string,
+    public skills: Skill[] = []
+  ) {}
+}

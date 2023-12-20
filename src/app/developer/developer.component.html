@@ -3,3 +3,7 @@
 <p>{{developer.age}}</p>
 <p>{{developer.gender}}</p>
 <p>{{developer.bio}}</p>
+<h1>INPUT</h1>
+<ng-container *ngFor="let skill of developer.skills">
+    <app-skill [skill]="skill"></app-skill>
+</ng-container>

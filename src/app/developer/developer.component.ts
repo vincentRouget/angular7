@@ -1,21 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { developer } from '../Models/developer.model';
-
+import { Developer } from '../Models/Developer.model';
+import { Skill } from '../Models/Skill.model';
 
 @Component({
   selector: 'app-developer',
   templateUrl: './developer.component.html',
-  styleUrl: './developer.component.css'
+  styleUrls: ['./developer.component.css']
 })
 
 export class DeveloperComponent implements OnInit {
 
-  developer!: developer
+  developer!: Developer;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.developer = new developer("Doe", "John", 43, "Homme", "Reconversion")
-  }
+    this.developer = new Developer("Doe", "John", 43, "Homme", "Reconversion");
 
+    const skill1 = new Skill("React", "React", "React");
+    const skill2 = new Skill("Java", "Java", "Java");
+
+    this.developer.skills?.push(skill1);
+    this.developer.skills?.push(skill2);
+  }
 }
